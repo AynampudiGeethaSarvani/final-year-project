@@ -1,0 +1,113 @@
+{% load static %}
+<html>
+<head>
+<title>Analyze and forecast the cyber attack detection process using Machine Learing Techniques</title>
+<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+<link rel="stylesheet" type="text/css" href="{% static 'style.css' %}"/>
+</head>
+<body>
+<div id="wrapper">
+	<div id="header">
+		<div id="logo">
+			<center><font size="5" color="white">Analyze and forecast the cyber attack detection process using Machine Learing Techniques</font></center>
+		</div>
+		<div>
+		</div>
+	</div>
+	<div id="menu">
+				<ul><center>
+      <li><a href="{% url 'HomePage' %}">Home</a></li>
+	  <li><a href="{% url 'Viewuser' %}">ViewProfile</a></li>
+	  <li><a href="{% url 'EditProfile' %}">EditProfile</a></li>
+	  <li><a href="{% url 'ChangePassword' %}">ChangePassword</a></li>
+	  <li><a href="{% url 'Predict' %}">Prediction</a></li>
+	   <li><a href="{% url 'index' %}">Logout</a></li>
+		</center></ul>
+<br class="clearfix" />
+				</div>
+			
+	<div id="splash">
+		<img class="pic" src="{% static 'images/investor.jpg' %}" width="870" height="230" alt="" />
+	</div>	
+			<center>
+	<form method="post" action="{% url 'Predict' %}">
+    {% csrf_token %}
+    <table>
+        <tr>
+            <td><label for="attack">Attack:</label></td>
+            <td>
+                <select id="attack" name="attack">
+                    <option value="0">Other</option>
+                    <option value="1">neptune</option>
+                    <option value="2">normal</option>
+                    <option value="3">satan</option>
+                </select>
+            </td>
+        </tr>
+        <tr>
+            <td><label for="count">Number of connections to the same destination host as the current connection in the past two seconds:</label></td>
+            <td><input type="text" name="count" placeholder="count" required="required" /></td>
+        </tr>
+        <tr>
+            <td><label for="dst_host_diff_srv_rate">The percentage of connections that were to different services, among the connections aggregated in dst_host_count:</label></td>
+            <td><input type="text" name="dst_host_diff_srv_rate" placeholder="dst_host_diff_srv_rate" required="required" /></td>
+        </tr>
+        <tr>
+            <td><label for="dst_host_same_src_port_rate">The percentage of connections that were to the same source port, among the connections aggregated in dst_host_srv_count:</label></td>
+            <td><input type="text" name="dst_host_same_src_port_rate" placeholder="dst_host_same_src_port_rate" required="required" /></td>
+        </tr>
+        <tr>
+            <td><label for="dst_host_same_srv_rate">The percentage of connections that were to the same service, among the connections aggregated in dst_host_count:</label></td>
+            <td><input type="text" name="dst_host_same_srv_rate" placeholder="dst_host_same_srv_rate" required="required" /></td>
+        </tr>
+        <tr>
+            <td><label for="dst_host_srv_count">Number of connections having the same port number:</label></td>
+            <td><input type="text" name="dst_host_srv_count" placeholder="dst_host_srv_count" required="required" /></td>
+        </tr>
+        <tr>
+            <td><label for="flag">Status of the connection – Normal or Error:</label></td>
+            <td>
+                <select id="flag" name="flag">
+                    <option value="0">Other</option>
+                    <option value="1">S0</option>
+                    <option value="2">SF</option>
+                </select>
+            </td>
+        </tr>
+        <tr>
+            <td><label for="last_flag">Last Flag:</label></td>
+            <td><input type="text" name="last_flag" placeholder="last_flag" required="required" /></td>
+        </tr>
+        <tr>
+            <td><label for="logged_in">1 if successfully logged in; 0 otherwise:</label></td>
+            <td><input type="text" name="logged_in" placeholder="logged_in" required="required" /></td>
+        </tr>
+        <tr>
+            <td><label for="same_srv_rate">The percentage of connections that were to the same service, among the connections aggregated in count:</label></td>
+            <td><input type="text" name="same_srv_rate" placeholder="same_srv_rate" required="required" /></td>
+        </tr>
+        <tr>
+            <td><label for="serror_rate">The percentage of connections that have activated the flag (4) s0, s1, s2, or s3, among the connections aggregated in count:</label></td>
+            <td><input type="text" name="serror_rate" placeholder="serror_rate" required="required" /></td>
+        </tr>
+        <tr>
+            <td><label for="service_http">Destination network service used http or not:</label></td>
+            <td>
+                <select id="service_http" name="service_http">
+                    <option value="0">No</option>
+                    <option value="1">Yes</option>
+                </select>
+            </td>
+        </tr>
+    </table>
+	<br/>
+	<button type="submit" class="btn btn-primary btn-block btn-large">Predict</button>
+</form>
+
+			<br/>
+			<font size="6" color="red"><center>{{ data }}</center></font>
+			<br/><br/><br/><br/><br/><br/><br/><br/><br/>
+				</div>	
+				</div>		
+	</body>
+</html>
