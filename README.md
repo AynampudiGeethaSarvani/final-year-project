@@ -1,2 +1,6 @@
-# final-year-project
-Final year project
+ANALYZE AND FORECAST THE CYBER ATTACK DETECTION PROCESS USING MACHINE LEARNING
+
+In the modern days With the rapid growth of digital technologies andincreased dependence on interconnected systems, cyber attacks have becomemore frequent, complex, and damaging. Traditional cybersecurity measures,which rely heavily on predefined rules and signature-based detection, oftenstruggle to keep pace with evolving attack patterns. As a result, there is a growing need for intelligent and adaptive security systems that can detect and predictcyber threats with greater accuracy and speed. Machine learning, with its abilityto learn from vast amounts of data and uncover hidden patterns, offers a powerfulsolution to this challenge. By analyzing historical cyber attack data and identifyingtrends, machine learning models can enhance the detection and forecasting ofpotential attacks. This project explores the application of various machine learningtechniques to build a robust and predictive cybersecurity framework aimed at improving threat detection and response.
+
+HOW TO RUN 1.clone the repository 2.Import All the required modules like pytorch,matplotlib,keras,tensorflow, MySQL etc  3.Start the server 4.Open your browser at http://127.0.0.1:8000/index.html
+
